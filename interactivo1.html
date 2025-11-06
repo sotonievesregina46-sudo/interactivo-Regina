@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/confetti.css">
+  <style>
+    #header {
+      background-color: #74e651;
+      border-radius: 10px;
+      padding: 5px;
+    }
+
+    .nav {
+      padding-right: 20px;
+    }
+
+    .nav ul li{
+      display:inline;
+      padding:0 10px
+    }
+
+    h1 {
+      text-align: center;
+      color: black;
+      margin: 8px;
+    }
+    #seccion {
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap
+    }
+
+    .barra {
+      padding: 10px;
+      margin:5px;
+      background: rgb(167, 107, 236);
+      flex:3;
+      border-radius:10px;
+      display:flex;
+      flex-flow:column;
+      align-items:center;
+    }
+
+    .contenido {
+      padding: 10px;
+      border-radius:10px;
+      background: rgb(231, 114, 241);
+      margin:5px;
+      flex:1 150px;
+    }
+
+    .subcontenido2 {
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    #resultado {
+      display:flex;
+      flex-direction:column;
+      flex-wrap:wrap;
+      align-items: center;
+    }
+    
+    #footer {
+      background-color: white;
+      height: 100%;
+      text-align: center;
+      padding-top: 10px;
+      border-radius: 10px;
+      display:flex;
+      flex-flow:row;
+    }
+    .pie {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    #galeria{
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap; 
+      height:100px;
+    }
+
+    .proyecto{
+      
+      height:150px;
+      max-width:150px;
+      background-color:rgb(255, 255, 255);
+      border-radius:10px;
+      margin:10px;
+      flex:1 100px;
+    }
+
+    .barra a {
+      display:block;
+    }
+    #imagen-interactiva {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background-image: url('buencomer.jpg');
+      background-size: cover;
+      border: 2px solid #000;
+      border-radius: 10px;
+    }
+
+    #hotspot1 {
+      position: absolute;
+      top: 50px;
+      left: 131px;
+      width: 40px;
+      height: 40px;
+      background-color: #0015ffd0;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #hotspot2 {
+      position: absolute;
+       top: 170px;
+      left: 200px;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 21, 255, 0.822);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    #hotspot3 {
+      position: absolute;
+       top: 170px;
+      left: 70px;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 21, 255, 0.822);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .text-hotspot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+    }
+
+    #instrucciones {
+      flex:1;
+      cursor: pointer;
+    }
+
+    #prueba {
+      flex:1;
+      cursor:pointer;
+    }
+
+    .texto-rojo{
+            font-size:40px;
+            font-weight: bold;
+            color:red;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div class="nav" style="text-align:center;">
+      <h3>Bienvenido a "Conociendo el plato del buen comer"</h3>
+    </div>
+  </div>
+  <div id="seccion">
+    <div class="barra">
+        <div id="imagen-interactiva">
+          <div id="hotspot1"><span class="text-hotspot">1</span></div>
+          <div id="hotspot2"><span class="text-hotspot">2</span></div>
+          <div id="hotspot3"><span class="text-hotspot">3</span></div>
+
+        </div>
+    </div>
+    <div class="contenido">
+      <div class="subcontenido1">
+        <h2 id="titulo-info">Instrucciones</h2>
+        <p id="texto-info">Haz clic en cada uno de los grupos de alimentos para ver su descripción. Una vez que hayas visualizado todos, realiza el test de conocimientos.</p>
+      </div>
+      <div class="subcontenido2">
+        <div class="proyecto">
+          <img id="imagen-info" src="images/hotspot-cursor.png" alt="Imagen info" style="width:100%; height:100%; border-radius:10px;">
+        </div>
+      </div>
+      <div id="resultado" class="invisible">
+        <h2>Tu resultado:</h2>
+        <span id="calif" class="texto-rojo">0/0</span>
+        <img id="imagen-resultado" width="200px" src="images/ping.gif" />
+      </div>      
+    </div>
+  </div>
+  <div id="footer">
+    <div id="instrucciones"><img width="100px" src="images/instrucciones.png" /></div>
+    <div id="prueba"><img width="100px" src="images/test.png" /></div>
+  </div>
+  <script type="text/javascript">
+    let puntaje = 0;
+    let pregunta1 = "";
+
+    document.getElementById('hotspot1').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Verduras y Frutas';
+      document.getElementById('texto-info').textContent = 'Las verduras y frutas son esenciales en una dieta equilibrada. Son ricas en vitaminas, minerales y antioxidantes que ayudan a fortalecer el sistema inmunológico y la salud en general.';
+      document.getElementById('imagen-info').setAttribute('src', 'frutasyverduras.jpg');    
+    };
+
+    document.getElementById('hotspot2').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Proteínas y Legumbres';
+      document.getElementById('texto-info').textContent = 'Las proteínas son vitales para el crecimiento y reparación de los tejidos. Las legumbres, como frijoles y lentejas, son una excelente fuente vegetal de proteínas y fibra.';
+      document.getElementById('imagen-info').setAttribute('src', 'proteinas.jpg');
+    };
+
+     document.getElementById('hotspot3').onclick = function() {
+      document.getElementById('titulo-info').textContent = 'Cereales';
+      document.getElementById('texto-info').textContent = 'Los cereales son una excelente fuente de carbohidratos, que nos proporcionan la energía necesaria para las actividades diarias. Ejemplos: arroz, avena, trigo, maíz.';
+      document.getElementById('imagen-info').setAttribute('src', 'cereales.jpg');
+    };
+    document.getElementById('instrucciones').onclick = function(){
+      document.getElementById('titulo-info').textContent = 'Instrucciones';
+      document.getElementById('texto-info').textContent = 'Haz click en cada uno de los puntos de la imagen para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.';
+      document.getElementById('imagen-info').setAttribute('src', 'images/hotspot-cursor.png');
+    };
+
+    document.getElementById('prueba').onclick = function() {
+      alert("Bienvenidos a la prueba de conocimientos");
+      alert("Responde correctamente todas las preguntas para ganar");
+
+      // Pregunta 1
+      let pregunta1 = prompt("¿Los cereales son una buena fuente de carbohidratos? (Sí/No)");
+      pregunta1 = pregunta1.trim().toLowerCase();
+      if (pregunta1 === "sí" || pregunta1 === "si") {
+        alert("¡Correcto! Los cereales son una buena fuente de carbohidratos.");
+        puntaje += 1;
+      } else {
+        alert("Incorrecto. La respuesta correcta es: Sí.");
+      }
+
+      // Pregunta 2
+      let pregunta2 = prompt("¿Las leguminosas como frijoles y lentejas son ricas en proteínas? (Sí/No)");
+      pregunta2 = pregunta2.trim().toLowerCase();
+      if (pregunta2 === "sí" || pregunta2 === "si") {
+        alert("¡Correcto! Las leguminosas son ricas en proteínas.");
+        puntaje += 1;
+      } else {
+        alert("Incorrecto. La respuesta correcta es: Sí.");
+      }
+
+      // Pregunta 3
+      let pregunta3 = prompt("¿La leche es una buena fuente de fibra? (Sí/No)");
+      pregunta3 = pregunta3.trim().toLowerCase();
+      if (pregunta3 === "no") {
+        alert("¡Correcto! La leche no es una fuente significativa de fibra.");
+        puntaje += 1;
+      } else {
+        alert("Incorrecto. La respuesta correcta es: No.");
+      }
+
+      // Pregunta 4
+      let pregunta4 = prompt("¿Las frutas y verduras son ricas en vitaminas y minerales? (Sí/No)");
+      pregunta4 = pregunta4.trim().toLowerCase();
+      if (pregunta4 === "sí" || pregunta4 === "si") {
+        alert("¡Correcto! Las frutas y verduras son ricas en vitaminas y minerales.");
+        puntaje += 1;
+      } else {
+        alert("Incorrecto. La respuesta correcta es: Sí.");
+      }
+
+      // Pregunta 5
+      let pregunta5 = prompt("¿Es recomendable consumir azúcares en grandes cantidades? (Sí/No)");
+      pregunta5 = pregunta5.trim().toLowerCase();
+      if (pregunta5 === "no") {
+        alert("¡Correcto! No es recomendable consumir azúcares en grandes cantidades.");
+        puntaje += 1;
+      } else {
+        alert("Incorrecto. La respuesta correcta es: No.");
+      }
+
+      // Pregunta 6
+      let pregunta6 = prompt("¿El pescado es parte del grupo de proteínas en el Plato del Buen Comer? (Sí/No)");
+      pregunta6 = pregunta6.trim().toLowerCase();
+      if (pregunta6 === "sí" || pregunta6 === "si") {
+        alert("¡Correcto! El pescado está en el grupo de proteínas.");
+        puntaje += 1;
+      } else {
+        alert("Incorrecto. La respuesta correcta es: Sí.");
+      }
+
+      // Pregunta 7
+      let pregunta7 = prompt("¿Las proteínas son necesarias para el crecimiento y reparación de los tejidos? (Sí/No)");
+      pregunta7 = pregunta7.trim().toLowerCase();
+      if (pregunta7 === "sí" || pregunta7 === "si") {
+        alert("¡Correcto! Las proteínas son necesarias para el crecimiento y reparación de los tejidos.");
+        puntaje += 1;
+      } else {
+        alert("Incorrecto. La respuesta correcta es: Sí.");
+      }
+
+      // Pregunta 8
+      let pregunta8 = prompt("¿El arroz es parte del grupo de verduras? (Sí/No)");
+      pregunta8 = pregunta8.trim().toLowerCase();
+      if (pregunta8 === "no") {
+        alert("¡Correcto! El arroz no es parte del grupo de verduras.");
+        puntaje += 1;
+      } else {
+        alert("Incorrecto. La respuesta correcta es: No.");
+      }
+
+      // Pregunta 9
+      let pregunta9 = prompt("¿Las frutas como las naranjas son ricas en vitamina C? (Sí/No)");
+      pregunta9 = pregunta9.trim().toLowerCase();
+      if (pregunta9 === "sí" || pregunta9 === "si") {
+        alert("¡Correcto! Las naranjas son ricas en vitamina C.");
+        puntaje += 1;
+      } else {
+        alert("Incorrecto. La respuesta correcta es: Sí.");
+      }
+
+      // Pregunta 10
+      let pregunta10 = prompt("¿El huevo es una buena fuente de proteínas? (Sí/No)");
+      pregunta10 = pregunta10.trim().toLowerCase();
+      if (pregunta10 === "sí" || pregunta10 === "si") {
+        alert("¡Correcto! El huevo es una excelente fuente de proteínas.");
+        puntaje += 1;
+      } else {
+        alert("Incorrecto. La respuesta correcta es: Sí.");
+      }
+
+      // Mostrar resultado
+      if (puntaje === 10) {
+        alert("¡Felicidades! Has respondido correctamente todas las preguntas.");
+      } else {
+        alert("Has respondido " + puntaje + " preguntas correctamente. ¡Sigue intentando!");
+      }
+
+      document.getElementById("calif").textContent = puntaje + "/10";
+      document.getElementById("resultado").setAttribute("class", "visible");
+    };
+</script>
+Soto Nieves Regina 5C MPR
+</body>
+</html>
