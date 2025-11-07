@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/confetti.css">
   <style>
     #header {
-      background-color: #74e651;
+      background-color: #2adb2a;
       border-radius: 10px;
       padding: 5px;
     }
@@ -100,8 +100,8 @@
     }
     #imagen-interactiva {
       position: relative;
-      width: 300px;
-      height: 300px;
+      width: 600px;
+      height: 600px;
       background-image: url('plato.jpg');
       background-size: cover;
       border: 2px solid #000;
@@ -110,11 +110,11 @@
 
     #hotspot1 {
       position: absolute;
-      top: 50px;
-      left: 131px;
+      top: 170px;
+      left: 200px;
       width: 40px;
       height: 40px;
-      background-color: #0015ffd0;
+      background-color: #00ff0d;
       border-radius: 50%;
       cursor: pointer;
     }
@@ -122,20 +122,40 @@
     #hotspot2 {
       position: absolute;
        top: 170px;
-      left: 200px;
+      left: 350px;
       width: 40px;
       height: 40px;
-      background-color: rgba(0, 21, 255, 0.822);
+      background-color: rgb(9, 255, 0);
       border-radius: 50%;
       cursor: pointer;
     }
     #hotspot3 {
       position: absolute;
-       top: 170px;
-      left: 70px;
+       top: 270px;
+      left: 400px;
       width: 40px;
       height: 40px;
-      background-color: rgba(0, 21, 255, 0.822);
+      background-color: rgb(77, 29, 2);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+     #hotspot4 {
+      position: absolute;
+       top: 397px;
+      left: 356px;
+      width: 40px;
+      height: 40px;
+      background-color: rgb(77, 29, 2);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+     #hotspot5 {
+      position: absolute;
+       top: 355px;
+      left: 175px;
+      width: 40px;
+      height: 40px;
+      background-color: rgb(226, 86, 4);
       border-radius: 50%;
       cursor: pointer;
     }
@@ -178,6 +198,8 @@
           <div id="hotspot1"><span class="text-hotspot">1</span></div>
           <div id="hotspot2"><span class="text-hotspot">2</span></div>
           <div id="hotspot3"><span class="text-hotspot">3</span></div>
+          <div id="hotspot4"><span class="text-hotspot">4</span></div>
+          <div id="hotspot5"><span class="text-hotspot">5</span></div>
 
         </div>
     </div>
@@ -208,23 +230,34 @@
     let pregunta1 = "";
 
     document.getElementById('hotspot1').onclick = function() {
-      document.getElementById('titulo-info').textContent = 'Verduras y Frutas';
-      document.getElementById('texto-info').textContent = 'Las verduras y frutas son esenciales en una dieta equilibrada. Son ricas en vitaminas, minerales y antioxidantes que ayudan a fortalecer el sistema inmunológico y la salud en general.';
-      document.getElementById('imagen-info').setAttribute('src', 'frutasyverduras.jpg');    
-    };
+    document.getElementById('titulo-info').textContent = 'Verduras'; 
+    document.getElementById('texto-info').textContent = 'Las verduras son esenciales en una dieta equilibrada. Son ricas en vitaminas, minerales y antioxidantes que ayudan a fortalecer el sistema inmunológico y la salud en general.'; 
+    document.getElementById('imagen-info').setAttribute('src', 'verduras.jpg');    
+};
 
-    document.getElementById('hotspot2').onclick = function() {
-      document.getElementById('titulo-info').textContent = 'Proteínas y Legumbres';
-      document.getElementById('texto-info').textContent = 'Las proteínas son vitales para el crecimiento y reparación de los tejidos. Las legumbres, como frijoles y lentejas, son una excelente fuente vegetal de proteínas y fibra.';
-      document.getElementById('imagen-info').setAttribute('src', 'proteinas.jpg');
-      
-    };
+document.getElementById('hotspot2').onclick = function() {
+    document.getElementById('titulo-info').textContent = 'Frutas'; 
+    document.getElementById('texto-info').textContent = 'Las frutas son una fuente importante de vitaminas y fibra. Ayudan a mejorar la digestión y el funcionamiento del sistema inmunológico, y son bajas en calorías.'; 
+    document.getElementById('imagen-info').setAttribute('src', 'frutas.jpg');    
+};
 
-     document.getElementById('hotspot3').onclick = function() {
-      document.getElementById('titulo-info').textContent = 'Cereales';
-      document.getElementById('texto-info').textContent = 'Los cereales son una excelente fuente de carbohidratos, que nos proporcionan la energía necesaria para las actividades diarias. Ejemplos: arroz, avena, trigo, maíz.';
-      document.getElementById('imagen-info').setAttribute('src', 'cereales.jpg');
-    };
+document.getElementById('hotspot5').onclick = function() {
+    document.getElementById('titulo-info').textContent = 'Cereales'; 
+    document.getElementById('texto-info').textContent = 'Los cereales son una excelente fuente de carbohidratos complejos. Son importantes para proporcionar energía a largo plazo y contienen fibras, vitaminas y minerales esenciales.'; 
+    document.getElementById('imagen-info').setAttribute('src', 'cereales.jpg');    
+};
+
+document.getElementById('hotspot4').onclick = function() {
+    document.getElementById('titulo-info').textContent = 'Leguminosas'; 
+    document.getElementById('texto-info').textContent = 'Las leguminosas, como los frijoles, garbanzos y lentejas, son ricas en proteínas vegetales y fibra. Ayudan a regular el sistema digestivo y son una excelente opción para dietas vegetarianas o veganas.'; 
+    document.getElementById('imagen-info').setAttribute('src', 'leguminosas.jpg');    
+};
+
+document.getElementById('hotspot3').onclick = function() {
+    document.getElementById('titulo-info').textContent = 'Proteinas'; 
+    document.getElementById('texto-info').textContent = 'Los alimentos de origen animal, como carnes, pescados, huevos y productos lácteos, son ricos en proteínas de alta calidad y nutrientes esenciales como el hierro y el calcio.'; 
+    document.getElementById('imagen-info').setAttribute('src', 'proteinas.jpg');    
+};
     document.getElementById('instrucciones').onclick = function(){
       document.getElementById('titulo-info').textContent = 'Instrucciones';
       document.getElementById('texto-info').textContent = 'Haz click en cada uno de los puntos de la imagen para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.';
