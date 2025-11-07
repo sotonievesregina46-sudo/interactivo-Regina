@@ -102,7 +102,7 @@
       position: relative;
       width: 300px;
       height: 300px;
-      background-image: url('buencomer.jpg');
+      background-image: url('plato.jpg');
       background-size: cover;
       border: 2px solid #000;
       border-radius: 10px;
@@ -188,19 +188,20 @@
       </div>
       <div class="subcontenido2">
         <div class="proyecto">
-          <img id="imagen-info" src="images/hotspot-cursor.png" alt="Imagen info" style="width:100%; height:100%; border-radius:10px;">
+          <img id="imagen-info" src="hotspot-cursor.png" alt="Imagen info" style="width:100%; height:100%; border-radius:10px;">
         </div>
       </div>
+      
       <div id="resultado" class="invisible">
         <h2>Tu resultado:</h2>
         <span id="calif" class="texto-rojo">0/0</span>
-        <img id="imagen-resultado" width="200px" src="images/ping.gif" />
+        <img id="imagen-resultado" width="200px" src="ping.gif" />
       </div>      
     </div>
   </div>
   <div id="footer">
-    <div id="instrucciones"><img width="100px" src="images/instrucciones.png" /></div>
-    <div id="prueba"><img width="100px" src="images/test.png" /></div>
+    <div id="instrucciones"><img width="100px" src="instrucciones.png" /></div>
+    <div id="prueba"><img width="100px" src="test.png" /></div>
   </div>
   <script type="text/javascript">
     let puntaje = 0;
@@ -216,6 +217,7 @@
       document.getElementById('titulo-info').textContent = 'Proteínas y Legumbres';
       document.getElementById('texto-info').textContent = 'Las proteínas son vitales para el crecimiento y reparación de los tejidos. Las legumbres, como frijoles y lentejas, son una excelente fuente vegetal de proteínas y fibra.';
       document.getElementById('imagen-info').setAttribute('src', 'proteinas.jpg');
+      
     };
 
      document.getElementById('hotspot3').onclick = function() {
@@ -226,14 +228,14 @@
     document.getElementById('instrucciones').onclick = function(){
       document.getElementById('titulo-info').textContent = 'Instrucciones';
       document.getElementById('texto-info').textContent = 'Haz click en cada uno de los puntos de la imagen para ver su descripción. Una vez visualizado el interactivo, realiza el test de conocimientos.';
-      document.getElementById('imagen-info').setAttribute('src', 'images/hotspot-cursor.png');
+      document.getElementById('imagen-info').setAttribute('src', 'hotspot-cursor.png');
     };
 
     document.getElementById('prueba').onclick = function() {
       alert("Bienvenidos a la prueba de conocimientos");
       alert("Responde correctamente todas las preguntas para ganar");
 
-      // Pregunta 1
+    
       let pregunta1 = prompt("¿Los cereales son una buena fuente de carbohidratos? (Sí/No)");
       pregunta1 = pregunta1.trim().toLowerCase();
       if (pregunta1 === "sí" || pregunta1 === "si") {
@@ -243,7 +245,7 @@
         alert("Incorrecto. La respuesta correcta es: Sí.");
       }
 
-      // Pregunta 2
+      
       let pregunta2 = prompt("¿Las leguminosas como frijoles y lentejas son ricas en proteínas? (Sí/No)");
       pregunta2 = pregunta2.trim().toLowerCase();
       if (pregunta2 === "sí" || pregunta2 === "si") {
@@ -253,7 +255,7 @@
         alert("Incorrecto. La respuesta correcta es: Sí.");
       }
 
-      // Pregunta 3
+      
       let pregunta3 = prompt("¿La leche es una buena fuente de fibra? (Sí/No)");
       pregunta3 = pregunta3.trim().toLowerCase();
       if (pregunta3 === "no") {
@@ -263,7 +265,7 @@
         alert("Incorrecto. La respuesta correcta es: No.");
       }
 
-      // Pregunta 4
+      
       let pregunta4 = prompt("¿Las frutas y verduras son ricas en vitaminas y minerales? (Sí/No)");
       pregunta4 = pregunta4.trim().toLowerCase();
       if (pregunta4 === "sí" || pregunta4 === "si") {
@@ -273,7 +275,7 @@
         alert("Incorrecto. La respuesta correcta es: Sí.");
       }
 
-      // Pregunta 5
+      
       let pregunta5 = prompt("¿Es recomendable consumir azúcares en grandes cantidades? (Sí/No)");
       pregunta5 = pregunta5.trim().toLowerCase();
       if (pregunta5 === "no") {
@@ -283,7 +285,7 @@
         alert("Incorrecto. La respuesta correcta es: No.");
       }
 
-      // Pregunta 6
+      
       let pregunta6 = prompt("¿El pescado es parte del grupo de proteínas en el Plato del Buen Comer? (Sí/No)");
       pregunta6 = pregunta6.trim().toLowerCase();
       if (pregunta6 === "sí" || pregunta6 === "si") {
@@ -293,7 +295,7 @@
         alert("Incorrecto. La respuesta correcta es: Sí.");
       }
 
-      // Pregunta 7
+      
       let pregunta7 = prompt("¿Las proteínas son necesarias para el crecimiento y reparación de los tejidos? (Sí/No)");
       pregunta7 = pregunta7.trim().toLowerCase();
       if (pregunta7 === "sí" || pregunta7 === "si") {
@@ -303,7 +305,7 @@
         alert("Incorrecto. La respuesta correcta es: Sí.");
       }
 
-      // Pregunta 8
+      
       let pregunta8 = prompt("¿El arroz es parte del grupo de verduras? (Sí/No)");
       pregunta8 = pregunta8.trim().toLowerCase();
       if (pregunta8 === "no") {
@@ -313,7 +315,7 @@
         alert("Incorrecto. La respuesta correcta es: No.");
       }
 
-      // Pregunta 9
+      
       let pregunta9 = prompt("¿Las frutas como las naranjas son ricas en vitamina C? (Sí/No)");
       pregunta9 = pregunta9.trim().toLowerCase();
       if (pregunta9 === "sí" || pregunta9 === "si") {
@@ -323,7 +325,6 @@
         alert("Incorrecto. La respuesta correcta es: Sí.");
       }
 
-      // Pregunta 10
       let pregunta10 = prompt("¿El huevo es una buena fuente de proteínas? (Sí/No)");
       pregunta10 = pregunta10.trim().toLowerCase();
       if (pregunta10 === "sí" || pregunta10 === "si") {
@@ -333,7 +334,6 @@
         alert("Incorrecto. La respuesta correcta es: Sí.");
       }
 
-      // Mostrar resultado
       if (puntaje === 10) {
         alert("¡Felicidades! Has respondido correctamente todas las preguntas.");
       } else {
@@ -345,6 +345,6 @@
     };
 </script>
 Soto Nieves Regina 5C MPR
+
 </body>
 </html>
-hola regisss que haces
