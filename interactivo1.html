@@ -217,7 +217,9 @@
       <div id="resultado" class="invisible">
         <h2>Tu resultado:</h2>
         <span id="calif" class="texto-rojo">0/0</span>
-        <img id="imagen-resultado" width="200px" src="ping.gif" />
+        <!-- Gif oculto por defecto -->
+<img id="imagen-resultado" width="200px" src="ping.gif" style="display:none;" />
+
       </div>      
     </div>
   </div>
@@ -374,6 +376,7 @@ document.getElementById('hotspot3').onclick = function() {
       }
 
       document.getElementById("calif").textContent = puntaje + "/10";
+      document.getElementById("imagen-resultado").style.display = "block";
       document.getElementById("resultado").setAttribute("class", "visible");
     };
 </script>
