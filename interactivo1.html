@@ -184,6 +184,26 @@
             font-weight: bold;
             color:red;
     }
+          #form-button-container {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 12px;
+      z-index: 9999;
+    }
+    #btn-form{
+      display:inline-block;
+      background: #ff6b6b;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    #btn-form:hover{
+      background: #ff4c4c;
+    }
   </style>
 </head>
 <body>
@@ -219,6 +239,7 @@
         <span id="calif" class="texto-rojo">0/0</span>
         <!-- Gif oculto por defecto -->
 <img id="imagen-resultado" width="200px" src="ping.gif" style="display:none;" />
+          <a id="btn-form" href="formulario.php" role="button">Libro de visitas</a>
 
       </div>      
     </div>
